@@ -620,9 +620,12 @@ y_pred = regressor.predict(X_test)
 
 saved_features = features
 
+final_data_frame
 
+final_data_frameF1 = final_data_frame[final_data_frame['MolecularWeight'] <= 500]
+final_data_frameF2 = final_data_frameF1[final_data_frameF1['XLogP'] <=5.6]
 
-
+final_data_frame = final_data_frameF2
 
 pred_data_cid = final_data_frame["CID"].to_list()
 
@@ -737,3 +740,22 @@ for itter in top_cid:
     print(str(itter_count)+" : "+str(itter))
 
 
+import urllib.request
+l=[]
+for itter in top_cid:
+    l.append(itter)
+for i in l:
+    url = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{}/SDF'.format(i)
+    urllib.request.urlretrieve(url, 'C:/Users/Ben Geoffrey/Lig10.sdf')
+    print(url)
+    
+    import os
+    os.system('cmd /c "babel -isdf Lig10.sdf -opdbqt ligand1.pdbqt"')
+    
+    import os
+    os.system('cmd /c "vina --config configCLpro.txt"')
+
+    import os
+    os.system('cmd /c "vina --config configPLpro.txt"')
+    
+    input("Press any key to continue")

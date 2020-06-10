@@ -1,0 +1,18 @@
+receptor =  6w9c.pdbqt
+ligand = ligand1.pdbqt
+
+center_x =  0.1
+center_y =  0.1
+center_z =  0.1
+
+size_x = 100
+size_y = 100
+size_z = 100
+
+out= vina_out2.pdbqt
+
+log= lognew2.txt
+
+
+
+exhaustiveness= 100

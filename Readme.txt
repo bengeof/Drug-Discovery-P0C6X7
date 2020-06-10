@@ -23,3 +23,11 @@ autodock-vina 1.1.2-4
 Since autodock-vina can only be programmatically accessed in a Linux environment, this requires this part of the code be run in 
 a Linux OS
 
+While compiling the program from the working directory files to be kept in the working directory are the following 
+
+configCLpro.txt
+configPLpro.txt
+1p9u.pdbqt
+6w9c.pdbqt
+
+They can be doownloaded from this GitHub Repository

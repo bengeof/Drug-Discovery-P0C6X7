@@ -741,21 +741,24 @@ for itter in top_cid:
 
 
 import urllib.request
+import os
 l=[]
 for itter in top_cid:
     l.append(itter)
 for i in l:
     url = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{}/SDF'.format(i)
-    urllib.request.urlretrieve(url, 'C:/Users/Ben Geoffrey/Lig10.sdf')
-    print(url)
+    urllib.request.urlretrieve(url, 'Lig.sdf')
     
-    import os
-    os.system('cmd /c "babel -isdf Lig10.sdf -opdbqt ligand1.pdbqt"')
     
-    import os
-    os.system('cmd /c "vina --config configCLpro.txt"')
+  
+    os.system('babel -isdf Lig.sdf -opdbqt ligand.pdbqt')
+    
+    
+    os.system('vina --config configCLpro.txt')
 
-    import os
-    os.system('cmd /c "vina --config configPLpro.txt"')
+  
+    os.system('vina --config configPLpro.txt')
+    
+    print(url)
     
     input("Press any key to continue")

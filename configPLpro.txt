@@ -1,5 +1,5 @@
-receptor =  6w9c.pdbqt
-ligand = ligand1.pdbqt
+receptor =6w9c.pdbqt
+ligand =ligand.pdbqt
 
 center_x =  0.1
 center_y =  0.1
